@@ -1,0 +1,48 @@
+sample_project/
+├── src/                          # Source files (development)
+│   ├── spa01/
+│   │   ├── spa01.html
+│   │   ├── spa01.css
+│   │   └── spa01.js
+│   ├── spa02/
+│   │   ├── spa02.html
+│   │   ├── spa02.css
+│   │   └── spa02.js
+│   ├── spa03/                    # NEW - Application Shell
+│   │   ├── index.html            # Main entry point
+│   │   ├── spa03.css
+│   │   └── spa03.js
+│   ├── shared/                   # NEW - Shared resources
+│   │   ├── styles/
+│   │   │   ├── common.css        # Shared styles
+│   │   │   └── variables.css     # CSS variables
+│   │   └── js/
+│   │       └── utils.js          # Shared JS utilities
+│   └── assets/                   # Images, fonts, etc.
+│
+├── _dist/                        # Built/runtime files (deployment)
+│   ├── spa01.html
+│   ├── spa02.html
+│   ├── index.html                # Application shell
+│   ├── css/
+│   │   └── [compiled CSS]
+│   └── js/
+│       └── [compiled JS]
+│
+├── docker/                       # NEW - Docker configuration
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   └── build.sh                  # Build script
+│
+├── docs/
+│   ├── project_overview.md
+│   ├── requirements.md           # UPDATE with SPA03 & Docker
+│   ├── session_log.md
+│   └── docker_guide.md           # NEW - Docker instructions
+│
+├── scripts/                      # NEW - Build scripts
+│   └── build.sh                  # Non-Docker build option
+│
+├── .dockerignore
+├── .gitignore
+└── README.md
