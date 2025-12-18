@@ -1,0 +1,80 @@
+/* SPA02 Specific Styles - Multi-Language Hello World */
+
+/* Override body font for SPA02 */
+body {
+    font-family: var(--font-family-fallback);
+}
+
+/* Typography */
+h1 {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-3xl);
+}
+
+/* Greeting Display */
+#greeting {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin: var(--spacing-xl) 0;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+/* Controls Section */
+.controls {
+    margin: var(--spacing-lg) 0;
+}
+
+select {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Slider Container */
+.slider-container {
+    margin: var(--spacing-md) 0;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.speed-value {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+}
+
+/* Status Indicator */
+.status {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs);
+    background: var(--color-background-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+}
+
+.status.cycling {
+    background: var(--color-success);
+    color: var(--color-success-text);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    #greeting {
+        font-size: var(--font-size-2xl);
+        min-height: 80px;
+    }
+}
+Claude
