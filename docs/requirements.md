@@ -25,6 +25,8 @@
 - Persist language selection (localStorage)
 - Clean, centered layout
 - Responsive design
+- add a slider control (min = 1.0, max = 5.0) seconds, default 1.5 seconds
+- on load, automatically cycle through all 20 languages at the specified time delay interval (from the slider control)
 
 ### Technical Requirements
 - Pure HTML/CSS/JavaScript
