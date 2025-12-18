@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Multi-Language</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        #greeting {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 40px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        #greeting.rtl {
+            direction: rtl;
+        }
+
+        .controls {
+            margin: 30px 0;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+        }
+
+        select:hover {
+            border-color: #764ba2;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+        .slider-container {
+            margin: 25px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .speed-value {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #764ba2;
+            transform: scale(1.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #764ba2;
+            transform: scale(1.2);
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .status.cycling {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            #greeting {
+                font-size: 2em;
+                min-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello World</h1>
+        
+        <div id="greeting">Hello World</div>
+
+        <div class="controls">
+            <label for="languageSelect">Choose Language:</label>
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="nl">Dutch</option>
+                <option value="sv">Swedish</option>
+                <option value="pl">Polish</option>
+                <option value="cs">Czech</option>
+                <option value="ja">Japanese (日本語)</option>
+                <option value="zh-cn">Chinese Simplified (简体中文)</option>
+                <option value="zh-tw">Chinese Traditional (繁體中文)</option>
+                <option value="ko">Korean (한국어)</option>
+                <option value="ar">Arabic (العربية)</option>
+                <option value="he">Hebrew (עברית)</option>
+                <option value="th">Thai (ไทย)</option>
+                <option value="hi">Hindi (हिंदी)</option>
+                <option value="ru">Russian (Русский)</option>
+                <option value="el">Greek (Ελληνικά)</option>
+            </select>
+
+            <div class="slider-container">
+                <div class="slider-label">
+                    <label for="speedSlider">Cycle Speed:</label>
+                    <span class="speed-value" id="speedValue">1.5s</span>
+                </div>
+                <input type="range" id="speedSlider" min="1.0" max="5.0" step="0.1" value="1.5">
+            </div>
+        </div>
+
+        <div class="status" id="status">Auto-cycling through languages...</div>
+    </div>
+
+    <script>
+        const translations = {
+            en: { text: 'Hello World', rtl: false },
+            es: { text: 'Hola Mundo', rtl: false },
+            fr: { text: 'Bonjour le Monde', rtl: false },
+            de: { text: 'Hallo Welt', rtl: false },
+            it: { text: 'Ciao Mondo', rtl: false },
+            pt: { text: 'Olá Mundo', rtl: false },
+            nl: { text: 'Hallo Wereld', rtl: false },
+            sv: { text: 'Hej Världen', rtl: false },
+            pl: { text: 'Witaj Świecie', rtl: false },
+            cs: { text: 'Ahoj Světe', rtl: false },
+            ja: { text: 'こんにちは世界', rtl: false },
+            'zh-cn': { text: '你好世界', rtl: false },
+            'zh-tw': { text: '你好世界', rtl: false },
+            ko: { text: '안녕하세요 세계', rtl: false },
+            ar: { text: 'مرحبا بالعالم', rtl: true },
+            he: { text: 'שלום עולם', rtl: true },
+            th: { text: 'สวัสดีชาวโลก', rtl: false },
+            hi: { text: 'नमस्ते दुनिया', rtl: false },
+            ru: { text: 'Привет мир', rtl: false },
+            el: { text: 'Γεια σου Κόσμε', rtl: false }
+        };
+
+        const languages = Object.keys(translations);
+        let currentIndex = 0;
+        let cycleInterval = null;
+        let isCycling = true;
+
+        const greetingEl = document.getElementById('greeting');
+        const selectEl = document.getElementById('languageSelect');
+        const sliderEl = document.getElementById('speedSlider');
+        const speedValueEl = document.getElementById('speedValue');
+        const statusEl = document.getElementById('status');
+
+        function updateGreeting(langCode) {
+            const translation = translations[langCode];
+            greetingEl.textContent = translation.text;
+            
+            if (translation.rtl) {
+                greetingEl.classList.add('rtl');
+            } else {
+                greetingEl.classList.remove('rtl');
+            }
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('selectedLanguage', selectEl.value);
+            localStorage.setItem('cycleSpeed', sliderEl.value);
+        }
+
+        function loadFromStorage() {
+            const savedLang = localStorage.getItem('selectedLanguage');
+            const savedSpeed = localStorage.getItem('cycleSpeed');
+            
+            if (savedLang && translations[savedLang]) {
+                selectEl.value = savedLang;
+            }
+            
+            if (savedSpeed) {
+                sliderEl.value = savedSpeed;
+                speedValueEl.textContent = savedSpeed + 's';
+            }
+        }
+
+        function startCycling() {
+            if (cycleInterval) {
+                clearInterval(cycleInterval);
+            }
+
+            const speed = parseFloat(sliderEl.value) * 1000;
+            
+            cycleInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % languages.length;
+                const langCode = languages[currentIndex];
+                selectEl.value = langCode;
+                updateGreeting(langCode);
+                saveToStorage();
+            }, speed);
+
+            isCycling = true;
+            statusEl.textContent = 'Auto-cycling through languages...';
+            statusEl.classList.add('cycling');
+        }
+
+        function stopCycling() {
+            if (cycleInterval) {
+                clearInterval(cycleInterval);
+                cycleInterval = null;
+            }
+            isCycling = false;
+            statusEl.textContent = 'Manual mode - select a language';
+            statusEl.classList.remove('cycling');
+        }
+
+        selectEl.addEventListener('change', (e) => {
+            stopCycling();
+            updateGreeting(e.target.value);
+            saveToStorage();
+            currentIndex = languages.indexOf(e.target.value);
+        });
+
+        sliderEl.addEventListener('input', (e) => {
+            speedValueEl.textContent = e.target.value + 's';
+            saveToStorage();
+            
+            if (isCycling) {
+                startCycling();
+            }
+        });
+
+        loadFromStorage();
+        
+        const initialLang = selectEl.value;
+        currentIndex = languages.indexOf(initialLang);
+        updateGreeting(initialLang);
+        
+        startCycling();
+    </script>
+</body>
+</html>
