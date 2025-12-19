@@ -1,7 +1,7 @@
 # Requirements Specification
 
 ## Project Overview
-Multi-language Single Page Applications (SPAs) demonstrating GitHub + Claude workflow integration, progressive development approach, and containerized deployment.
+Multi-language Single Page Applications (SPAs) demonstrating GitHub + Claude workflow integration, progressive development approach, metadata/dynamic content injection, and containerized deployment.
 
 ## Core Requirements
 
@@ -25,6 +25,7 @@ Multi-language Single Page Applications (SPAs) demonstrating GitHub + Claude wor
 src/spa01/
 ├── spa01.html    # Main HTML structure
 ├── spa01.css     # Styles specific to SPA01
+├── spa01.json    # labels and content for SPA01 **new requirement**
 └── spa01.js      # JavaScript logic for SPA01
 ```
 
@@ -61,6 +62,7 @@ Must include representation from:
 src/spa02/
 ├── spa02.html    # Main HTML structure
 ├── spa02.css     # Styles specific to SPA02
+├── spa02.json    # labels and content for SPA02 **new requirement**
 └── spa02.js      # Language data and logic
 ```
 
@@ -88,6 +90,7 @@ src/spa02/
 src/spa03/
 ├── index.html    # Application shell entry point
 ├── spa03.css     # Shell-specific styles
+├── spa03.json    # labels, language list, and content for SPA03 **new requirement**
 └── spa03.js      # Navigation and shell logic
 ```
 
@@ -119,6 +122,11 @@ src/spa03/
    - Storage utilities
    - Animation helpers
    - Validation functions
+   
+4. **content.js**
+   - form titles, labels, button text
+   - messages
+   - language list, etc.
 
 **File Structure**:
 ```
