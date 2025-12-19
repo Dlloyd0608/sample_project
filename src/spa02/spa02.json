@@ -67,6 +67,12 @@
       "rtl": false
     },
     {
+      "code": "dk",
+      "name": "Danish",
+      "greeting": "Hej Verden",
+      "rtl": false
+    },
+    {
       "code": "pl",
       "name": "Polish",
       "greeting": "Witaj Świecie",
