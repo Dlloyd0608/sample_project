@@ -1,0 +1,429 @@
+/* ============================================
+   SPA03 Application Shell Styles
+   ============================================ */
+
+/* Override common.css body styles for application shell */
+body {
+    display: block !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    background: #f5f5f5 !important;
+    padding: 0 !important;
+}
+
+/* CSS Variables - Aligned with existing project variables */
+:root {
+    /* SPA03 Specific Variables */
+    --sidebar-width: 250px;
+    --sidebar-bg: #2c3e50;
+    --sidebar-text: #ecf0f1;
+    --sidebar-hover: #34495e;
+    --sidebar-active: var(--color-primary, #667eea); /* Use project primary color */
+    --content-bg: var(--color-white, #ffffff);
+    --border-color: #dee2e6;
+    --error-color: #e74c3c;
+    --loading-color: var(--color-primary, #667eea); /* Use project primary color */
+    --overlay-bg: rgba(0, 0, 0, 0.5);
+    --transition-speed: var(--transition-normal, 0.3s);
+    --mobile-breakpoint: 768px;
+}
+
+/* ============================================
+   Application Shell Layout
+   ============================================ */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* ============================================
+   Sidebar Styles
+   ============================================ */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.sidebar-header {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--sidebar-text);
+}
+
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--sidebar-text);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.toggle-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--sidebar-text);
+    position: relative;
+}
+
+.toggle-icon::before,
+.toggle-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--sidebar-text);
+    transition: transform 0.3s;
+}
+
+.toggle-icon::before {
+    top: -8px;
+}
+
+.toggle-icon::after {
+    bottom: -8px;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-bottom: 0.25rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1.25rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.nav-link.active {
+    background-color: var(--sidebar-active);
+    font-weight: 600;
+}
+
+.nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--sidebar-text);
+}
+
+.nav-icon {
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.nav-text {
+    flex: 1;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.version {
+    margin: 0;
+}
+
+/* ============================================
+   Content Area Styles
+   ============================================ */
+
+.content-area {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--content-bg);
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-frame {
+    flex: 1;
+    width: 100%;
+    border: none;
+    display: block;
+    background-color: var(--content-bg);
+}
+
+/* ============================================
+   Loading Indicator
+   ============================================ */
+
+.loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--content-bg);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.loading-indicator.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(52, 152, 219, 0.2);
+    border-top-color: var(--loading-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    margin-top: 1rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   Error Display
+   ============================================ */
+
+.error-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--content-bg);
+    padding: 2rem;
+    text-align: center;
+    z-index: 50;
+}
+
+.error-display.show {
+    display: flex;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.error-title {
+    font-size: 1.5rem;
+    color: var(--error-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.error-message {
+    color: #6c757d;
+    margin: 0 0 1.5rem 0;
+    max-width: 500px;
+}
+
+.error-retry {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--sidebar-active);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.error-retry:hover {
+    background-color: #2980b9;
+}
+
+/* ============================================
+   Mobile Overlay
+   ============================================ */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-bg);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.sidebar-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* ============================================
+   Mobile Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    .content-area {
+        margin-left: 0;
+    }
+    
+    .app-shell.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   Tablet Styles
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+    
+    .sidebar-title {
+        font-size: 1.125rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    .sidebar {
+        display: none;
+    }
+    
+    .content-area {
+        margin-left: 0;
+    }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+/* Focus styles */
+.nav-link:focus,
+.sidebar-toggle:focus,
+.error-retry:focus {
+    outline: 2px solid var(--sidebar-active);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .nav-link.active::before {
+        width: 6px;
+    }
+    
+    .sidebar {
+        border-right: 2px solid var(--sidebar-text);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --content-bg: #1a1a1a;
+        --border-color: #444;
+    }
+}
