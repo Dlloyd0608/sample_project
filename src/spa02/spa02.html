@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Multi-Language</title>
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../shared/styles/variables.css">
+    <link rel="stylesheet" href="../shared/styles/common.css">
+    
+    <!-- SPA02 Specific Styles -->
+    <link rel="stylesheet" href="spa02.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading"></h1>
+        
+        <div id="greeting"></div>
+
+        <div class="controls">
+            <label for="languageSelect" id="languageLabel"></label>
+            <select id="languageSelect">
+                <!-- Options will be populated dynamically -->
+            </select>
+
+            <div class="slider-container">
+                <div class="slider-label">
+                    <label for="speedSlider" id="speedLabel"></label>
+                    <span class="speed-value" id="speedValue"></span>
+                </div>
+                <input type="range" id="speedSlider" min="1.0" max="5.0" step="0.1" value="1.5">
+            </div>
+        </div>
+
+        <div class="status" id="status"></div>
+    </div>
+
+    <!-- Shared Utilities -->
+    <script src="../shared/js/utils.js"></script>
+    
+    <!-- SPA02 Specific Scripts -->
+    <script src="spa02.js"></script>
+</body>
+</html>
