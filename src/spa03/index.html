@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multi-Language SPA Application Shell">
+    <title>Sample Project - Application Shell</title>
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../shared/styles/variables.css">
+    <link rel="stylesheet" href="../shared/styles/common.css">
+    
+    <!-- SPA03 Specific Styles -->
+    <link rel="stylesheet" href="spa03.css">
+</head>
+<body>
+    <!-- Application Shell Container -->
+    <div class="app-shell">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title" id="sidebarTitle"></h1>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list" id="navList">
+                    <!-- Navigation items will be populated dynamically -->
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p class="version" id="version"></p>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <!-- Loading Indicator -->
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p class="loading-text" id="loadingText"></p>
+            </div>
+            
+            <!-- Content Frame -->
+            <iframe 
+                id="contentFrame" 
+                class="content-frame"
+                title="Application Content"
+                sandbox="allow-scripts allow-same-origin allow-forms"
+                loading="lazy">
+            </iframe>
+            
+            <!-- Error Display -->
+            <div class="error-display" id="errorDisplay">
+                <div class="error-icon" id="errorIcon"></div>
+                <h2 class="error-title" id="errorTitle"></h2>
+                <p class="error-message" id="errorMessage"></p>
+                <button class="error-retry" id="errorRetry"></button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Shared Utilities -->
+    <script src="../shared/js/utils.js"></script>
+    
+    <!-- SPA03 Script -->
+    <script src="spa03.js"></script>
+</body>
+</html>
