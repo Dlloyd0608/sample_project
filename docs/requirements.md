@@ -11,6 +11,7 @@ Multi-language Single Page Applications (SPAs) demonstrating GitHub + Claude wor
 **Features**:
 - Display "Hello, World!" message
 - Clean, minimal design
+- Dynamic content injection
 - Single language (English)
 - Responsive layout
 
@@ -36,6 +37,7 @@ src/spa01/
 
 **Features**:
 - Display "Hello, World!" in 20+ languages
+- Dynamic content injection
 - Language selector dropdown
 - Support for single-byte and double-byte character sets
 - Persistent language selection (session storage)
@@ -73,6 +75,7 @@ src/spa02/
 
 **Features**:
 - Navigation menu with links to SPA01 and SPA02
+- Dynamic content injection
 - Project information/welcome message
 - Consistent header and footer across all pages
 - Responsive navigation (hamburger menu on mobile)
