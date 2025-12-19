@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "id": "spa03",
+    "version": "1.0.0",
+    "title": "Sample Project - Application Shell",
+    "description": "Main application shell with navigation"
+  },
+  "content": {
+    "sidebar": {
+      "title": "Sample Project",
+      "version": "v1.0.0",
+      "toggleAriaLabel": "Toggle sidebar"
+    },
+    "navigation": [
+      {
+        "id": "spa01",
+        "icon": "👋",
+        "text": "Hello World",
+        "path": "../spa01/spa01.html",
+        "title": "Hello World"
+      },
+      {
+        "id": "spa02",
+        "icon": "🌍",
+        "text": "Multi-Language",
+        "path": "../spa02/spa02.html",
+        "title": "Multi-Language"
+      }
+    ],
+    "loading": {
+      "text": "Loading...",
+      "ariaLabel": "Loading content"
+    },
+    "error": {
+      "icon": "⚠️",
+      "title": "Unable to Load Content",
+      "messages": {
+        "notFound": "The requested application could not be found.",
+        "timeout": "Loading timeout. The application took too long to respond.",
+        "loadFailed": "Failed to load the application. Please check your connection.",
+        "unknown": "Unknown application: {app}"
+      },
+      "retryButton": "Try Again"
+    }
+  },
+  "settings": {
+    "defaultSpa": "spa01",
+    "loadingDelay": 300,
+    "iframeTimeout": 10000,
+    "mobileBreakpoint": 768
+  }
+}
