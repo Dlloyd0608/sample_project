@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "id": "spa02",
+    "version": "1.0.0",
+    "title": "Hello World - Multi-Language",
+    "description": "Multi-language Hello World application with 20+ languages"
+  },
+  "content": {
+    "heading": "Hello World",
+    "labels": {
+      "languageSelect": "Choose Language:",
+      "speedSlider": "Cycle Speed:",
+      "speedUnit": "s"
+    },
+    "status": {
+      "cycling": "Auto-cycling through languages...",
+      "manual": "Manual mode - select a language"
+    }
+  },
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "greeting": "Hello World",
+      "rtl": false
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "greeting": "Hola Mundo",
+      "rtl": false
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "greeting": "Bonjour le Monde",
+      "rtl": false
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "greeting": "Hallo Welt",
+      "rtl": false
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "greeting": "Ciao Mondo",
+      "rtl": false
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "greeting": "Olá Mundo",
+      "rtl": false
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "greeting": "Hallo Wereld",
+      "rtl": false
+    },
+    {
+      "code": "sv",
+      "name": "Swedish",
+      "greeting": "Hej Världen",
+      "rtl": false
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "greeting": "Witaj Świecie",
+      "rtl": false
+    },
+    {
+      "code": "cs",
+      "name": "Czech",
+      "greeting": "Ahoj Světe",
+      "rtl": false
+    },
+    {
+      "code": "ja",
+      "name": "Japanese (日本語)",
+      "greeting": "こんにちは世界",
+      "rtl": false
+    },
+    {
+      "code": "zh-cn",
+      "name": "Chinese Simplified (简体中文)",
+      "greeting": "你好世界",
+      "rtl": false
+    },
+    {
+      "code": "zh-tw",
+      "name": "Chinese Traditional (繁體中文)",
+      "greeting": "你好世界",
+      "rtl": false
+    },
+    {
+      "code": "ko",
+      "name": "Korean (한국어)",
+      "greeting": "안녕하세요 세계",
+      "rtl": false
+    },
+    {
+      "code": "ar",
+      "name": "Arabic (العربية)",
+      "greeting": "مرحبا بالعالم",
+      "rtl": true
+    },
+    {
+      "code": "he",
+      "name": "Hebrew (עברית)",
+      "greeting": "שלום עולם",
+      "rtl": true
+    },
+    {
+      "code": "th",
+      "name": "Thai (ไทย)",
+      "greeting": "สวัสดีชาวโลก",
+      "rtl": false
+    },
+    {
+      "code": "hi",
+      "name": "Hindi (हिंदी)",
+      "greeting": "नमस्ते दुनिया",
+      "rtl": false
+    },
+    {
+      "code": "ru",
+      "name": "Russian (Русский)",
+      "greeting": "Привет мир",
+      "rtl": false
+    },
+    {
+      "code": "el",
+      "name": "Greek (Ελληνικά)",
+      "greeting": "Γεια σου Κόσμε",
+      "rtl": false
+    }
+  ],
+  "settings": {
+    "defaultLanguage": "en",
+    "defaultSpeed": 1.5,
+    "minSpeed": 1.0,
+    "maxSpeed": 5.0,
+    "speedStep": 0.1
+  }
+}
