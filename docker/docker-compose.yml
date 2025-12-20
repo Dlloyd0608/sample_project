@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # Web application service
+  web:
+    # Build configuration
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # Container name
+    container_name: sample-project-web
+    
+    # Port mapping (host:container)
+    ports:
+      - "8080:80"
+    
+    # Environment variables
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    
+    # Volume mounts for development
+    # Uncomment for live reload during development
+    # volumes:
+    #   - ./_dist:/usr/share/nginx/html:ro
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Networks
+    networks:
+      - sample-project-network
+
+# Networks
+networks:
+  sample-project-network:
+    driver: bridge
+
+# Volumes (if needed for persistent data)
+# volumes:
+#   nginx-logs:
