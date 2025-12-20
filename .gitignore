@@ -1,0 +1,15 @@
+# 1. Add .gitignore
+cat > .gitignore << 'EOF'
+# (paste content from artifact above)
+EOF
+
+# 2. Create .github/workflows directory (if you want CI/CD)
+mkdir -p .github/workflows
+
+# 3. Verify scripts folder exists
+ls -la scripts/
+
+# 4. Commit changes
+git add .gitignore .github/
+git commit -m "Add .gitignore and GitHub Actions workflow"
+git push
