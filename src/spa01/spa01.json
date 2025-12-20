@@ -3,7 +3,7 @@
     "id": "spa01",
     "version": "1.0.0",
     "title": "Hello World - SPA01",
-    "description": "Simple Hello World single-page application"
+    "description": "Hello World single-page application"
   },
   "content": {
     "emoji": "👋",
