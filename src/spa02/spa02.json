@@ -127,6 +127,12 @@
       "rtl": false
     },
     {
+      "code": "vi",
+      "name": "Vietnamese (tiếng Việt)",
+      "greeting": "Chào thế giới",
+      "rtl": false
+    },
+    {
       "code": "hi",
       "name": "Hindi (हिंदी)",
       "greeting": "नमस्ते दुनिया",
