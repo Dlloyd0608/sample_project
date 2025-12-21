@@ -1,14 +1,14 @@
 {
   "meta": {
     "id": "spa01",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Hello World - SPA01",
     "description": "Hello World single-page application"
   },
   "content": {
     "emoji": "👋",
-    "heading": "Hello World",
-    "description": "Welcome to SPA01 - A simple, clean single-page application"
+    "heading": "Hello World (v2)",
+    "description": "Welcome to a simple, clean single-page application"
   },
   "settings": {
     "animationEnabled": true,
