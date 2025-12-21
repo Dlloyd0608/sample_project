@@ -1,19 +1,19 @@
 {
   "meta": {
     "id": "spa02",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Hello World - Multi-Language",
     "description": "Multi-language Hello World application with 20+ languages"
   },
   "content": {
-    "heading": "Hello World",
+    "heading": "Hello World (v2)",
     "labels": {
       "languageSelect": "Choose Language:",
       "speedSlider": "Cycle Speed:",
       "speedUnit": "s"
     },
     "status": {
-      "cycling": "Auto-cycling through languages...",
+      "cycling": "Auto-cycling...",
       "manual": "Manual mode - select a language"
     }
   },
